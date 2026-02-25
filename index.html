@@ -9,21 +9,31 @@
         background: #6c3eb6; /* La La Land yellow */
     }
     #play-btn {
-        background:#f7e017; 
-        color: #000000;
-        padding: 1em 2em;
-        font-size: 1.2em;
-        transition: background 0.2s;
+            background: #f7e017; 
+            color: #000000;
+            padding: 0.5em 1.2em;
+            font-size: 1em;
+            border-radius: 999px; /* fully rounded */
+            cursor: pointer;
+            transition: background 0.2s;
+            letter-spacing: 0.08em;
+            font-family: 'Josefin Sans', 'Arial', sans-serif;
     }
     #play-btn:hover {
         background: #4b277a;
     }
 </style>
+    <!-- Art Deco/modern font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <button id="play-btn">Play </button>
+        <div id="riff-guide" style="font-size:1.1em; color:#ffff; margin-bottom:1em;">
+            <strong>City of Stars Riff:</strong> <span style="letter-spacing:0.2em;">f h j k j h f &nbsp; hold for 2 seconds &nbsp; h j k j h d &nbsp; f h j k j h f</span>
+            <br><span style="font-size:0.9em;">(Press these keys in order on your keyboard)</span>
+        </div>
+        <button id="play-btn">Play </button>
     <script src="http://unpkg.com/tone"></script> 
     <script src="https://unpkg.com/audiokeys@0.1.1/dist/audiokeys.min.js"></script>
     <script src="app.js"></script>
 </body>
-</html>
+    
