@@ -5,8 +5,37 @@
     <title>La La Land Practice</title>
 </head>
 <style>
+            .riff-key {
+                background: #fffbe7;
+                color: #6c3eb6;
+                border: 2px solid #f7e017;
+                border-radius: 8px;
+                font-size: 0.95em;
+                font-family: 'Josefin Sans', 'Arial', sans-serif;
+                margin: 0 0.05em 0.2em 0.05em;
+                padding: 0.18em 0.45em;
+                cursor: pointer;
+                transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+                outline: none;
+            }
+            .riff-key.lit {
+                background: #f7e017;
+                color: #4b277a;
+                box-shadow: 0 0 12px 2px #f7e01799;
+            }
+        /* Glow effect for play button */
+        .glow {
+            box-shadow: 0 0 16px 6px #f7e01799, 0 0 32px 12px #fffbe7;
+            background: #ffe95c;
+            transition: box-shadow 0.2s, background 0.2s;
+        }
     body {
         background: #6c3eb6; /* La La Land yellow */
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     #play-btn {
             background: #f7e017; 
@@ -27,9 +56,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-        <div id="riff-guide" style="font-size:1.1em; color:#ffff; margin-bottom:1em;">
-            <strong>City of Stars Riff:</strong> <span style="letter-spacing:0.2em;">f h j k j h f &nbsp; hold for 2 seconds &nbsp; h j k j h d &nbsp; f h j k j h f</span>
-            <br><span style="font-size:0.9em;">(Press these keys in order on your keyboard)</span>
+        <div style="width:100%; text-align:center; margin-top:0.7em; padding-bottom:3.5em;">
+            <strong style="font-family: 'Josefin Sans', 'Arial', sans-serif; font-size:2.7em; color:#ffff; letter-spacing:0.08em;">City of Stars Riff</strong>
+        </div>
+        <div id="riff-guide">
+            <span id="riff-sequence" style="letter-spacing:0.2em;">
+                <button class="riff-key" data-key="f" type="button">f</button>
+                <button class="riff-key" data-key="h" type="button">h</button>
+                <button class="riff-key" data-key="j" type="button">j</button>
+                <button class="riff-key" data-key="k" type="button">k</button>
+                <button class="riff-key" data-key="j" type="button">j</button>
+                <button class="riff-key" data-key="h" type="button">h</button>
+                <button class="riff-key" data-key="f" type="button">f</button>
+                <span style="margin:0 1em; color:#f7e017; font-weight:bold;">hold for 2 seconds</span>
+                <button class="riff-key" data-key="f" type="button">f</button>
+                <button class="riff-key" data-key="h" type="button">h</button>
+                <button class="riff-key" data-key="j" type="button">j</button>
+                <button class="riff-key" data-key="k" type="button">k</button>
+                <button class="riff-key" data-key="j" type="button">j</button>
+                <button class="riff-key" data-key="h" type="button">h</button>
+                <button class="riff-key" data-key="d" type="button">d</button>
+                <span style="margin:0 1em; color:#f7e017; font-weight:bold;">hold for 2 seconds</span>
+                <button class="riff-key" data-key="f" type="button">f</button>
+                <button class="riff-key" data-key="h" type="button">h</button>
+                <button class="riff-key" data-key="j" type="button">j</button>
+                <button class="riff-key" data-key="k" type="button">k</button>
+                <button class="riff-key" data-key="j" type="button">j</button>
+                <button class="riff-key" data-key="h" type="button">h</button>
+                <button class="riff-key" data-key="f" type="button">f</button>
+            </span>
+            <br><span style="font-size:0.9em; color:alicebluef">(Press these keys in order on your keyboard)</span>
         </div>
         <button id="play-btn">Play </button>
     <script src="http://unpkg.com/tone"></script> 
