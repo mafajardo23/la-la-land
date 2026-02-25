@@ -23,14 +23,14 @@
                 color: #4b277a;
                 box-shadow: 0 0 12px 2px #f7e01799;
             }
-        /* Glow effect for play button */
+        
         .glow {
             box-shadow: 0 0 16px 6px #f7e01799, 0 0 32px 12px #fffbe7;
             background: #ffe95c;
             transition: box-shadow 0.2s, background 0.2s;
         }
     body {
-        background: #6c3eb6; /* La La Land yellow */
+        background: #6c3eb6; 
         min-height: 100vh;
         display: flex;
         flex-direction: column;
@@ -42,7 +42,7 @@
             color: #000000;
             padding: 0.5em 1.2em;
             font-size: 1em;
-            border-radius: 999px; /* fully rounded */
+            border-radius: 999px;
             cursor: pointer;
             transition: background 0.2s;
             letter-spacing: 0.08em;
@@ -58,6 +58,7 @@
 <body>
         <div style="width:100%; text-align:center; margin-top:0.7em; padding-bottom:3.5em;">
             <strong style="font-family: 'Josefin Sans', 'Arial', sans-serif; font-size:2.7em; color:#ffff; letter-spacing:0.08em;">City of Stars Riff</strong>
+            <br><span style="font-size:0.9em; font-family: 'Josefin Sans'; color:aliceblue">(Press these keys in order on your keyboard)</span>
         </div>
         <div id="riff-guide">
             <span id="riff-sequence" style="letter-spacing:0.2em;">
@@ -85,9 +86,8 @@
                 <button class="riff-key" data-key="h" type="button">h</button>
                 <button class="riff-key" data-key="f" type="button">f</button>
             </span>
-            <br><span style="font-size:0.9em; color:alicebluef">(Press these keys in order on your keyboard)</span>
+            
         </div>
-        <button id="play-btn">Play </button>
     <script src="http://unpkg.com/tone"></script> 
     <script src="https://unpkg.com/audiokeys@0.1.1/dist/audiokeys.min.js"></script>
     <script src="app.js"></script>

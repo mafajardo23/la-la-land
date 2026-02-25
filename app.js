@@ -1,6 +1,5 @@
 //QWERTY APP ***************************************************
 
-// Use a piano sampler instead of a synth
 const piano = new Tone.Sampler({
     urls: {
         C4: "C4.mp3",
@@ -8,7 +7,7 @@ const piano = new Tone.Sampler({
         "F#4": "Fs4.mp3",
         A4: "A4.mp3"
     },
-    release: 5,
+    release: 3,
     baseUrl: "https://tonejs.github.io/audio/salamander/"
 }).toDestination();
 
@@ -18,14 +17,6 @@ keyboard.down((key) => {
     console.log(key);
     if (key.frequency) {
         piano.triggerAttackRelease(key.frequency, "8n");
-        // Make the Play button glow
-        const playBtn = document.getElementById('play-btn');
-        if (playBtn) {
-            playBtn.classList.add('glow');
-            setTimeout(() => {
-                playBtn.classList.remove('glow');
-            }, 200);
-        }
 
         const keyCodeToLetter = {
             70: 'f',
