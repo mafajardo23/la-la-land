@@ -36,14 +36,18 @@ function getFrequencyForKey(qwertyKey) {
 }
 
 async function playRiff() {
+
     const riffBtns = document.querySelectorAll('#riff-sequence .riff-key');
     let btnIdx = 0;
+
     for (let i = 0; i < riffSequence.length; i++) {
         const step = riffSequence[i];
         if (typeof step === 'string') {
             // Play note using QWERTY mapping
             const freq = getFrequencyForKey(step);
+
             if (freq) piano.triggerAttackRelease(freq, '8n');
+
             for (; btnIdx < riffBtns.length; btnIdx++) {
                 if (riffBtns[btnIdx].getAttribute('data-key') === step) {
                     riffBtns[btnIdx].classList.add('lit');
@@ -54,11 +58,15 @@ async function playRiff() {
                     break;
                 }
             }
+
             await new Promise(res => setTimeout(res, 250));
+
         } else if (step.hold) {
             // Hold note for specified duration using QWERTY mapping
             const freq = getFrequencyForKey(step.hold);
+
             if (freq) piano.triggerAttackRelease(freq, step.duration / 1000);
+
             for (; btnIdx < riffBtns.length; btnIdx++) {
                 if (riffBtns[btnIdx].getAttribute('data-key') === step.hold) {
                     riffBtns[btnIdx].classList.add('lit');
@@ -69,12 +77,14 @@ async function playRiff() {
                     break;
                 }
             }
+
             await new Promise(res => setTimeout(res, step.duration));
         }
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    
     const playBtn = document.getElementById('play-riff-btn');
     if (playBtn) {
         playBtn.addEventListener('click', () => {
@@ -108,7 +118,9 @@ keyboard.down((key) => {
             75: 'k',
             68: 'd'
         };
+
         const pressed = keyCodeToLetter[key.keyCode];
+
         if (!window.riffKeyIndices) window.riffKeyIndices = {};
         if (pressed) {
             const riffBtns = document.querySelectorAll(`#riff-sequence .riff-key[data-key='${pressed}']`);
