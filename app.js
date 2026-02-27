@@ -20,7 +20,7 @@ const riffKeyToNote = {
     'd': 'D#4' // Example: adjust if needed
 };
 
-// Helper to get the frequency for a QWERTY key using AudioKeys mapping
+// Helped me still use the same notes from the qwerty tutorial
 function getFrequencyForKey(qwertyKey) {
     // AudioKeys default QWERTY mapping (same as used by AudioKeys)
     const keyToMidi = {
