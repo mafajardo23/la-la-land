@@ -20,7 +20,11 @@ const riffKeyToNote = {
     'd': 'D#4' // Example: adjust if needed
 };
 
-// Helped me still use the same notes from the qwerty tutorial
+/* =====================================================
+   Code assistance with coppilot
+   Date: Feb 25 2026
+   Purpose: Helped me map the keys from the riff to the original keys from the tutorial repo package. 
+===================================================== */
 function getFrequencyForKey(qwertyKey) {
     // AudioKeys default QWERTY mapping (same as used by AudioKeys)
     const keyToMidi = {
