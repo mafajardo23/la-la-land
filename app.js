@@ -11,17 +11,16 @@ const riffSequence = [
 ];
 
 
-// Map riff keys to piano notes (adjust as needed)
 const riffKeyToNote = {
     'f': 'C4',
     'h': 'D#4',
     'j': 'F#4',
     'k': 'A4',
-    'd': 'D#4' // Example: adjust if needed
+    'd': 'D#4' 
 };
 
 /* =====================================================
-   Code assistance with coppilot
+   Code assistance with copilot
    Date: Feb 25 2026
    Purpose: Helped me map the keys from the riff to the original keys from the tutorial repo package. 
 ===================================================== */
